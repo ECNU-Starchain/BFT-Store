@@ -1,0 +1,18 @@
+
+set(ENABLE_SSSE3 -mssse3)
+set(ENABLE_AVX2 -mavx2)
+
+add_library(encode-basic encode_basic.cpp lohi_table.cpp)
+set_target_properties(encode-basic PROPERTIES FOLDER gf-arithmetic-backends)
+target_include_directories(encode-basic PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/..")
+add_library(encode-adv encode_adv.cpp lohi_table.cpp)
+set_target_properties(encode-adv PROPERTIES FOLDER gf-arithmetic-backends)
+target_include_directories(encode-adv PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/..")
+add_library(encode-ssse3 encode_sse.cpp lohi_table.cpp)
+set_target_properties(encode-ssse3 PROPERTIES FOLDER gf-arithmetic-backends)
+target_compile_options(encode-ssse3 PRIVATE ${ENABLE_SSSE3})
+target_include_directories(encode-ssse3 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/..")
+add_library(encode-avx2 encode_avx2.cpp lohi_table.cpp)
+set_target_properties(encode-avx2 PROPERTIES FOLDER gf-arithmetic-backends)
+target_compile_options(encode-avx2 PRIVATE ${ENABLE_AVX2})
+target_include_directories(encode-avx2 PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/..")
