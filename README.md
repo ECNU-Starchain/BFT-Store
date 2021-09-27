@@ -4,7 +4,7 @@ BFT-Store is a Byzantine fault-tolerant storage engine via EC for permissioned b
 
 For more details:
 
-[《BFT-Store: Storage Partition for Permissioned Blockchain via Erasure Coding(ICDE2020)》][bft-store]
+[《 BFT-Store: Storage Partition for Permissioned Blockchain via Erasure Coding (ICDE2020) 》][bft-store]
 
 [bft-store]: https://ieeexplore.ieee.org/document/9101675
 
